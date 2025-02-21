@@ -395,9 +395,7 @@ header .header-actions .account {
         padding: 0 20rem;
     }
     header .header-actions .language-selecion .icon{
-        top: 38rem;
-        width: 20rem;
-        height: 20rem;
+        display: none;
     }
     header .header__nav{
         display: none;
