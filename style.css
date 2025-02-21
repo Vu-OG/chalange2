@@ -413,7 +413,7 @@ header .header-actions .account {
         left: 50%;
         height: 950em;
         width: 850em;
-        top: calc(50% - 50rem);
+        top: calc(50% + 50rem);
     }
     .container .content .sign-in .sign-in__title,
     .container .content .sign-up .sign-up__title{
@@ -481,7 +481,7 @@ header .header-actions .account {
         right: auto;
         left: 200%;
         transform: translate(-50% -50%);
-        top: calc(50% - 50rem);
+        top: calc(50% + 50rem);
         background-color: rgba(101, 168, 255, 0.8);
     }
     .container .content .sign-in{
