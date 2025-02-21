@@ -165,7 +165,8 @@ header .header-actions .account {
     user-select: none;
 }
 
-.container .content .sign-in {
+.container .content .sign-in ,
+.container .content .sign-up {
     position: absolute;
     translate: 0 -50%;
     top: 50%;
@@ -189,7 +190,8 @@ header .header-actions .account {
     z-index: 0;
 }
 
-.sign-in__title {
+.sign-in__title,
+.sign-up__title {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
@@ -274,6 +276,97 @@ header .header-actions .account {
 .bgMobile{
     display: none;
 }
+.container .content .sign-up{
+    display: block;
+    height: 500rem;
+    width: 490rem;
+    left: auto;
+    right: 180rem;
+}
+
+/*  */
+/* .container .content .sign-in{
+    display: none;
+} */
+.sign-up input[type="text"],
+.sign-up input[type="password"]{
+    padding: 5rem 22rem 0 22rem;
+    border-radius: 12rem;
+    box-sizing: border-box;
+    border: 2rem solid #7FE9FE;
+    background: transparent;
+    width: 370rem;
+    height: 56rem;
+    position: absolute;
+    color: black;
+    outline: none;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20rem;
+    line-height: 23rem;
+    left: 50%;
+    translate: -50%;
+}
+.sign-up__form input[type="password"]::placeholder,
+.sign-up__form input[type="text"]::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+.sign-up .sign-up__form .fName, .sign-up .sign-up__form .lName{
+    width: 180rem;
+    translate: 0%;
+}
+.sign-up .sign-up__form .fName{
+    top: 166rem;
+    left: 60rem;
+}
+.sign-up .sign-up__form .lName{
+    top: 166rem;
+    translate: -100%;
+    left: calc(100% - 60rem);
+}
+.sign-up .sign-up__form input:nth-of-type(3){
+    top: 236rem;
+    left: 50%;
+}
+.sign-up .sign-up__form input:nth-of-type(4){
+    top: 306rem;
+    left: 50%;
+}
+.sign-up .signun_btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56rem;
+    color: #548CBD;
+    width: 100rem;
+    background: black;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18rem;
+    line-height: 21rem;
+    border-radius: 12rem;
+    margin-left: 5rem;
+    cursor: pointer;
+    transition: 1s;
+    position: absolute;
+    bottom: 65rem;
+    left: 50%;
+    translate: -50%;
+}
+.sign-up .signin{
+    bottom: 20rem;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15rem;
+    line-height: 14rem;
+    color: #000000;
+}
 @media screen and (max-width: 1200px){
     html{
         font-size: calc(100vw/1440);
@@ -320,33 +413,53 @@ header .header-actions .account {
         background-color: rgba(101, 168, 255, 0.8);
         transform: translate(-50%);
         left: 50%;
-        height: 500em;
+        height: 950em;
         width: 850em;
     }
-    .container .content .sign-in .sign-in__title{
+    .container .content .sign-in .sign-in__title,
+    .container .content .sign-up .sign-up__title{
         font-size: 120rem;
         line-height: 46rem;
         top: 150rem;
     }
+    .container .content .sign-up .sign-up__title{
+        font-size: 100rem;
+    }
     .sign-in__form input[type="text"]{
-        top: 250rem;
-        left: 70rem;
+        top: 350rem;
+        left: 50%;
+        translate: -50% 0;
+        width: 600rem;
+        height: 100rem;
+        font-size: 40rem;
+        line-height: 46rem;
+    }
+    .sign-in__form input[type="password"]{
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        display: block;
+        opacity: 1;
+        height: 100rem;
+        top: 500rem;
         width: 600rem;
         height: 100rem;
         font-size: 40rem;
         line-height: 46rem;
     }
     .signIn_btn{
-        top: 250rem;
-        right: 70rem;
-        width: 100rem;
+        top: 650rem;
+        width: 190rem;
         height: 100rem;
         font-size: 40rem;
         line-height: 46rem;
+        transform: translate(-50%);
+        left: 50%;
     }
     .sign-in .signup{
         bottom: 80rem;
-        left: 70rem;
+        transform: translate(-50%);
+        left: 50%;
         font-size: 30rem;
         line-height: 35rem;
     }
@@ -361,5 +474,78 @@ header .header-actions .account {
         translate: -50% -50%;
         top: 50%;
         left: 50%;
+        
+    }
+    .container .content .sign-up{
+        height: 950em;
+        width: 850em;
+        right: auto;
+        left: 200%;
+        transform: translate(-50% -50%);
+        top: 50%;
+    }
+    .container .content .sign-in{
+        transform: translate(-50% -50%);
+        top: 50%;
+    }
+    .sign-up input[type="text"],
+    .sign-up input[type="password"]{
+        top: 350rem;
+        left: 50%;
+        translate: -50% 0;
+        width: 670rem;
+        height: 100rem;
+        font-size: 40rem;
+        line-height: 46rem;
+    }
+    .sign-up .sign-up__form .fName, .sign-up .sign-up__form .lName{
+        width: 320rem;
+        top: 300rem;
+    }
+    .sign-up .sign-up__form .fName{
+        left: 90rem;
+    }
+    .sign-up .sign-up__form .lName{
+        left: calc(100% - 90rem);
+    }
+    .sign-up .sign-up__form input:nth-of-type(3){
+        top: 440rem;
+        left: 50%;
+        translate: -50% 0;
+    }
+    .sign-up .sign-up__form input:nth-of-type(4){
+        top: 580rem;
+        left: 50%;
+        translate: -50% 0;
+    }
+    .sign-up .signun_btn{
+        top: 720rem;
+        width: 190rem;
+        height: 100rem;
+        font-size: 40rem;
+        line-height: 46rem;
+        transform: translate(0%);
+        left: 50%;
+    }
+    .sign-up .signin{
+        bottom: 50rem;
+        transform: translate(0%);
+        left: 50%;
+        font-size: 30rem;
+        line-height: 35rem;
+    }
+    .container .content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+    @media screen and (min-width: 100vh){
+        body{
+            overflow: auto;
+        }
+        .container{
+            height: 120vh;
+        }
     }
 }

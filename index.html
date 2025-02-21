@@ -42,14 +42,27 @@
                     <input type="text" placeholder="Enter your email">
                     <input type="password" placeholder="Enter your password">
                     <div class="signIn_btn" type="1">Next</div>
-                    <div class="signup">Don’t have an acount? <a onclick="accountClick()" style="cursor: pointer;"><u>Sign up</u></a></div>
+                    <div class="signup">Don’t have an acount? <a onclick="accountClick()"
+                            style="cursor: pointer;"><u>Sign up</u></a></div>
+                </form>
+            </div>
+            <div class="sign-up">
+                <div class="sign-up__title">Sign Up Form</div>
+                <form class="sign-up__form">
+                    <input class = "fName" type="text" placeholder="First Name">
+                    <input class="lName" type="text" placeholder="Last Name">
+                    <input type="text" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <div class="signun_btn" type="1">Sign Up</div>
+                    <div class="signin">Have an acount? <a onclick="accountClick()"
+                            style="cursor: pointer;"><u>Sign in</u></a></div>
                 </form>
             </div>
             <img class="bg" src="./img/bgbg.jpg" alt="">
             <img class="bgMobile" src="./img/123.jpg" alt="">
         </div>
         <script>
-            
+
             const languageSelecion = document.querySelector('.language-selecion');
             const selection = document.querySelector('.selection');
             let hee = selection.offsetHeight;
@@ -88,63 +101,92 @@
             const container = document.querySelector('.container');
             const content = document.querySelector('.content');
             let In_signUp = false;
+            const btn = document
+            let check = true;
+            const account = document.querySelector('.account');
             function accountClick() {
-                if (!In_signUp) {
-                    In_signUp = true;
-                    container.scrollBy({
-                        top: 0,
-                        left: content.scrollWidth,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    In_signUp = false;
-                    container.scrollBy({
-                        top: 0,
-                        left: -content.scrollWidth,
-                        behavior: 'smooth'
-                    });
+                if (check) {
+                    if (!In_signUp) {
+                        In_signUp = true;
+                        account.textContent = 'Sign In';
+                        container.scrollBy({
+                            top: 0,
+                            left: content.scrollWidth,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        In_signUp = false;
+                        account.textContent = 'Sign Up';
+                        container.scrollBy({
+                            top: 0,
+                            left: -content.scrollWidth,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             }
 
             const signIn_btn = document.querySelector('.signIn_btn');
             const signIN = document.querySelector('.sign-in');
-            const signup= document.querySelector('.sign-in .signup');
+            const signup = document.querySelector('.sign-in .signup');
             signIn_btn.addEventListener('click', () => {
                 const email = document.querySelector('input[type="text"]');
                 const password = document.querySelector('input[type="password"]');
-                if (signIn_btn.getAttribute('type') === '1') {
-                    if (email.value.includes('@')) {
-                        console.log("click");
-                        setTimeout(() => {
-                            password.style.display = 'block';
-                        }, 50);
-                        signIn_btn.innerHTML = 'Sign In';
-                        signIn_btn.setAttribute('type', '2');
-                        signIN.style.transition = 'all 0.5s ease';
-                        signIN.style.height = '490rem';
-                        email.style.transition = 'all 0.5s ease';
-                        email.style.transform = 'translateX(-50%)';
-                        email.style.left = '50%';
-                        email.style.border = '1rem solid black';
-                        email.style.top = '180rem'
-                        password.style.transition = 'all 0.5s ease';
-                        password.style.opacity = '1';
-                        password.style.transform = 'translateX(-50%)';
-                        password.style.left = '50%';
-                        password.style.border = '1rem solid black';
-                        password.style.top = '260rem';
-                        password.style.height = '56rem';
-                        password.style.border = '2rem solid #7FE9FE';
-                        signIn_btn.style.transition = 'all 0.5s ease';
-                        signIn_btn.style.width = '95rem';
-                        signIn_btn.style.right = '50%';
-                        signIn_btn.style.top = 'calc(100% - 88rem)';
-                        signIn_btn.style.transform = 'translate(50%, -100%)';
-                        signup.style.transform = 'translateX(-50%)';
-                        signup.style.left = '50%';
+                if (check) {
+                    if (signIn_btn.getAttribute('type') === '1') {
+                        if (email.value.includes('@')) {
+                            console.log("click");
+                            setTimeout(() => {
+                                password.style.display = 'block';
+                            }, 50);
+                            signIn_btn.innerHTML = 'Sign In';
+                            signIn_btn.setAttribute('type', '2');
+                            signIN.style.transition = 'all 0.5s ease';
+                            signIN.style.height = '490rem';
+                            email.style.transition = 'all 0.5s ease';
+                            email.style.transform = 'translateX(-50%)';
+                            email.style.left = '50%';
+                            email.style.border = '1rem solid black';
+                            email.style.top = '180rem'
+                            password.style.transition = 'all 0.5s ease';
+                            password.style.opacity = '1';
+                            password.style.transform = 'translateX(-50%)';
+                            password.style.left = '50%';
+                            password.style.border = '1rem solid black';
+                            password.style.top = '260rem';
+                            password.style.height = '56rem';
+                            password.style.border = '2rem solid #7FE9FE';
+                            signIn_btn.style.transition = 'all 0.5s ease';
+                            signIn_btn.style.width = '95rem';
+                            signIn_btn.style.right = '50%';
+                            signIn_btn.style.top = 'calc(100% - 88rem)';
+                            signIn_btn.style.transform = 'translate(50%, -100%)';
+                            signup.style.transform = 'translateX(-50%)';
+                            signup.style.left = '50%';
+                        }
+                    } else {
+
                     }
+                }
+            });
+            let width = window.innerWidth;
+            if (window.innerWidth > 1200) {
+                check = true;
+            } else {
+                check = false;
+                signIn_btn.innerHTML = 'Sign In';
+            }
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1200) {
+                    check = true;
+                    window.location.reload();
                 } else {
-                    
+                    if (check){
+                        window.location.reload();
+                    }
+                    check = false;
+                    window.scrollTo(0, 0);
+                    signIn_btn.innerHTML = 'Sign In';
                 }
             });
         </script>
