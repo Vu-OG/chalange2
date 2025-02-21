@@ -320,8 +320,35 @@ header .header-actions .account {
         background-color: rgba(101, 168, 255, 0.8);
         transform: translate(-50%);
         left: 50%;
-        height: 270em;
-        width: 490em;
+        height: 500em;
+        width: 850em;
+    }
+    .container .content .sign-in .sign-in__title{
+        font-size: 120rem;
+        line-height: 46rem;
+        top: 150rem;
+    }
+    .sign-in__form input[type="text"]{
+        top: 250rem;
+        left: 70rem;
+        width: 600rem;
+        height: 100rem;
+        font-size: 40rem;
+        line-height: 46rem;
+    }
+    .signIn_btn{
+        top: 250rem;
+        right: 70rem;
+        width: 100rem;
+        height: 100rem;
+        font-size: 40rem;
+        line-height: 46rem;
+    }
+    .sign-in .signup{
+        bottom: 80rem;
+        left: 70rem;
+        font-size: 30rem;
+        line-height: 35rem;
     }
     .container .content .bg{
         display: none;
