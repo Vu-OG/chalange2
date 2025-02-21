@@ -481,6 +481,7 @@ header .header-actions .account {
         left: 200%;
         transform: translate(-50% -50%);
         top: 50%;
+        background-color: rgba(101, 168, 255, 0.8);
     }
     .container .content .sign-in{
         transform: translate(-50% -50%);
