@@ -550,6 +550,6 @@ header .header-actions .account {
         }
     }
     .container .content .sign-in, .container .content .sign-up {
-        translate: 0 calc(-50% - 90rem);
+        translate: 0 calc(-50% - 100rem);
     }
 }
