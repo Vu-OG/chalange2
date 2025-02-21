@@ -413,7 +413,6 @@ header .header-actions .account {
         left: 50%;
         height: 950em;
         width: 850em;
-        top: calc(50% + 100rem);
     }
     .container .content .sign-in .sign-in__title,
     .container .content .sign-up .sign-up__title{
@@ -462,6 +461,9 @@ header .header-actions .account {
         font-size: 30rem;
         line-height: 35rem;
     }
+    .container{
+        height: calc(100vh - 74em);
+    };
     .container .content .bg{
         display: none;
     }
@@ -480,8 +482,7 @@ header .header-actions .account {
         width: 850em;
         right: auto;
         left: 200%;
-        transform: translate(-50% -50%);
-        top: calc(50% + 100rem);
+        transform: translate(-50% calc(-50%));
         background-color: rgba(101, 168, 255, 0.8);
     }
     .container .content .sign-in{
@@ -547,5 +548,8 @@ header .header-actions .account {
         .container{
             height: 120vh;
         }
+    }
+    .container .content .sign-in, .container .content .sign-up {
+        translate: 0 calc(-50% - 50rem);
     }
 }
