@@ -97,13 +97,16 @@
                     }
                 });
             });
-
+            const signIn_btn = document.querySelector('.signIn_btn');
+            const signIN = document.querySelector('.sign-in');
+            const signup = document.querySelector('.sign-in .signup');
+            const signUP = document.querySelector('.sign-up');
             const container = document.querySelector('.container');
             const content = document.querySelector('.content');
             let In_signUp = false;
             const btn = document
             let check = true;
-            const account = document.querySelector('.account');
+            const account = document.querySelector('.account'); 
             function accountClick() {
                 if (check) {
                     if (!In_signUp) {
@@ -123,12 +126,26 @@
                             behavior: 'smooth'
                         });
                     }
+                }else{
+                    if (!In_signUp) {
+                        In_signUp = true;
+                        account.textContent = 'Sign In';
+                        signIN.style.transition = 'all 0.5s ease';
+                        signIN.style.left = '-200%';
+                        signUP.style.transition = 'all 0.5s ease';
+                        signUP.style.left = '50%';
+                        signUP.style.transform = 'translateX(-50%)';
+                    } else {
+                        In_signUp = false;
+                        account.textContent = 'Sign Up';
+                        signIN.style.transition = 'all 0.5s ease';
+                        signIN.style.left = '50%';
+                        signUP.style.transition = 'all 0.5s ease';
+                        signUP.style.left = '200%';
+                        signUP.style.transform = 'translateX(-50%)';
+                    }
                 }
             }
-
-            const signIn_btn = document.querySelector('.signIn_btn');
-            const signIN = document.querySelector('.sign-in');
-            const signup = document.querySelector('.sign-in .signup');
             signIn_btn.addEventListener('click', () => {
                 const email = document.querySelector('input[type="text"]');
                 const password = document.querySelector('input[type="password"]');
