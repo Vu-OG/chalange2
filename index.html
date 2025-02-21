@@ -46,29 +46,33 @@
                 </form>
             </div>
             <img class="bg" src="./img/bgbg.jpg" alt="">
+            <img class="bgMobile" src="./img/123.jpg" alt="">
         </div>
         <script>
+            
             const languageSelecion = document.querySelector('.language-selecion');
             const selection = document.querySelector('.selection');
+            let hee = selection.offsetHeight;
             const icon = document.querySelector('.icon');
             const options = document.querySelectorAll('.option');
             let showSelection = false;
             let canSelect = false;
             languageSelecion.addEventListener('click', () => {
                 if (!showSelection) {
+                    hee = selection.offsetHeight;
                     showSelection = true;
                     canSelect = true;
                     selection.style.overflow = 'visible';
                     selection.style.height = 'auto';
                     options.forEach(option => {
-                        option.style.borderBottom = '1px solid #4A4A4A';
+                        option.style.borderBottom = '1rem solid #4A4A4A';
                     });
                 } else {
                     showSelection = false;
                     selection.style.overflow = 'hidden';
-                    selection.style.height = '33px';
+                    selection.style.height = `${hee}px`;
                     options.forEach(option => {
-                        option.style.borderBottom = '1px solid transparent';
+                        option.style.borderBottom = '1rem solid transparent';
                     });
                 }
             });
@@ -117,24 +121,24 @@
                         signIn_btn.innerHTML = 'Sign In';
                         signIn_btn.setAttribute('type', '2');
                         signIN.style.transition = 'all 0.5s ease';
-                        signIN.style.height = '490px';
+                        signIN.style.height = '490rem';
                         email.style.transition = 'all 0.5s ease';
                         email.style.transform = 'translateX(-50%)';
                         email.style.left = '50%';
-                        email.style.border = '1px solid black';
-                        email.style.top = '180px'
+                        email.style.border = '1rem solid black';
+                        email.style.top = '180rem'
                         password.style.transition = 'all 0.5s ease';
                         password.style.opacity = '1';
                         password.style.transform = 'translateX(-50%)';
                         password.style.left = '50%';
-                        password.style.border = '1px solid black';
-                        password.style.top = '260px';
-                        password.style.height = '56px';
-                        password.style.border = '2px solid #7FE9FE';
+                        password.style.border = '1rem solid black';
+                        password.style.top = '260rem';
+                        password.style.height = '56rem';
+                        password.style.border = '2rem solid #7FE9FE';
                         signIn_btn.style.transition = 'all 0.5s ease';
-                        signIn_btn.style.width = '95px';
+                        signIn_btn.style.width = '95rem';
                         signIn_btn.style.right = '50%';
-                        signIn_btn.style.top = 'calc(100% - 88px)';
+                        signIn_btn.style.top = 'calc(100% - 88rem)';
                         signIn_btn.style.transform = 'translate(50%, -100%)';
                         signup.style.transform = 'translateX(-50%)';
                         signup.style.left = '50%';
