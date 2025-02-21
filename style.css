@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 82px;
+    box-sizing: border-box;
+    background-color: #282828;
+}
+
+header .header--left {
+    display: flex;
+    align-items: center;
+}
+
+header .header__logo {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+header .header__nav {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin-left: 100px;
+}
+
+header .header__nav li a {
+    text-decoration: none;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    transition: 0.2s;
+}
+
+header .header__nav li a:hover {
+    color: #4BA3ED;
+}
+
+header .header-actions {
+    display: flex;
+    gap: 16px;
+    translate: 0 1px;
+    z-index: 2;
+}
+
+header .header-actions .language-selecion {
+    cursor: pointer;
+    position: relative;
+    width: 226px;
+    height: 33px;
+}
+
+header .header-actions .language-selecion .selection {
+    width: 226px;
+    height: 33px;
+    border-radius: 3px;
+    background-color: #313131;
+    scrollbar-width: none;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+header .header-actions .language-selecion .selection::-webkit-scrollbar {
+    display: none;
+}
+
+header .header-actions .language-selecion .selection .option {
+    height: 33px;
+    width: 226px;
+    display: flex;
+    padding-left: 27px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+header .language-selecion .icon {
+    width: 11px;
+    height: 14px;
+    position: absolute;
+    translate: -50% -50%;
+    top: calc(33px / 2);
+    right: 27px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('./img/img-select-language.png');
+}
+
+header .header-actions .language-selecion .selection .option {
+    box-sizing: border-box;
+    border-bottom: 1px solid transparent;
+}
+
+header .header-actions .language-selecion .selection .option,
+header .header-actions .account {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+header .header-actions .account {
+    width: 77px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* content */
+.container {
+    width: 100vw;
+    height: calc(100dvh - 74px);
+    background-color: gray;
+    scrollbar-width: none;
+    position: relative;
+    overflow: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container .content {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 2150px;
+    height: 100%;
+}
+.container .content .sign-in *{
+    user-select: none;
+}
+.container .content .sign-in {
+    position: absolute;
+    translate: 0 -50%;
+    top: 50%;
+    left: 124px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    background: rgba(217, 217, 217, 0.2);
+    height: 270px;
+    width: 490px;
+    border-radius: 20px;
+}
+
+.container .content .bg {
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.sign-in__title {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 69px;
+    color: #000000;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 62px;
+    width: 100%;
+    text-align: center;
+}
+
+.sign-in__form input[type="password"],
+.sign-in__form input[type="text"] {
+    padding: 6.7px 0 0 22px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: 2px solid #7FE9FE;
+    background: transparent;
+    width: 290px;
+    height: 56px;
+    position: absolute;
+    color: black;
+    outline: none;
+}
+.sign-in__form input[ type="password"] {
+    display: none;
+    opacity: 0;
+    height: 1px;
+}
+.sign-in__form input[type="text"]{
+    top: 136px;
+    left: 65px;
+}
+.sign-in__form input[type="password"]::placeholder,
+.sign-in__form input[type="text"]::placeholder {
+    /* color: black; */
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.signIn_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    color: #548CBD;
+    width: 56px;
+    background: black;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    border-radius: 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition:1s;
+    position: absolute;
+    top: 136px;
+    right: 75px;
+}
+.sign-in .signup{
+    bottom: 50px;
+    position: absolute;
+    left:70px;
+}

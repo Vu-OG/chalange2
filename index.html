@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header--left">
+            <div class="header__logo"></div>
+            <ul class="header__nav">
+                <li><a href="">Home</a></li>
+                <li><a href="">Event</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="header-actions">
+            <div class="language-selecion">
+                <div class="selection">
+                    <div class="option">English (US)</div>
+                    <div class="option">English (UK)</div>
+                    <div class="option">French</div>
+                    <div class="option">Spanish</div>
+                    <div class="option">Vietnamese</div>
+                </div>
+                <div class="icon">
+                </div>
+            </div>
+            <div class="account" onclick="accountClick()">Sign Up</div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="sign-in">
+                <div class="sign-in__title">Sign In Form</div>
+                <form class="sign-in__form">
+                    <input type="text" placeholder="Enter your email">
+                    <input type="password" placeholder="Enter your password">
+                    <div class="signIn_btn" type="1">Next</div>
+                    <div class="signup">Don’t have an acount? <a onclick="accountClick()" style="cursor: pointer;"><u>Sign up</u></a></div>
+                </form>
+            </div>
+            <img class="bg" src="./img/bgbg.jpg" alt="">
+        </div>
+        <script>
+            const languageSelecion = document.querySelector('.language-selecion');
+            const selection = document.querySelector('.selection');
+            const icon = document.querySelector('.icon');
+            const options = document.querySelectorAll('.option');
+            let showSelection = false;
+            let canSelect = false;
+            languageSelecion.addEventListener('click', () => {
+                if (!showSelection) {
+                    showSelection = true;
+                    canSelect = true;
+                    selection.style.overflow = 'visible';
+                    selection.style.height = 'auto';
+                    options.forEach(option => {
+                        option.style.borderBottom = '1px solid #4A4A4A';
+                    });
+                } else {
+                    showSelection = false;
+                    selection.style.overflow = 'hidden';
+                    selection.style.height = '33px';
+                    options.forEach(option => {
+                        option.style.borderBottom = '1px solid transparent';
+                    });
+                }
+            });
+            options.forEach(option => {
+                option.addEventListener('click', (item) => {
+                    if (canSelect) {
+                        selection.insertBefore(item.target, selection.firstChild);
+                        canSelect = false;
+                    }
+                });
+            });
+
+            const container = document.querySelector('.container');
+            const content = document.querySelector('.content');
+            let In_signUp = false;
+            function accountClick() {
+                if (!In_signUp) {
+                    In_signUp = true;
+                    container.scrollBy({
+                        top: 0,
+                        left: content.scrollWidth,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    In_signUp = false;
+                    container.scrollBy({
+                        top: 0,
+                        left: -content.scrollWidth,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            const signIn_btn = document.querySelector('.signIn_btn');
+            const signIN = document.querySelector('.sign-in');
+            const signup= document.querySelector('.sign-in .signup');
+            signIn_btn.addEventListener('click', () => {
+                const email = document.querySelector('input[type="text"]');
+                const password = document.querySelector('input[type="password"]');
+                if (signIn_btn.getAttribute('type') === '1') {
+                    if (email.value.includes('@')) {
+                        console.log("click");
+                        setTimeout(() => {
+                            password.style.display = 'block';
+                        }, 50);
+                        signIn_btn.innerHTML = 'Sign In';
+                        signIn_btn.setAttribute('type', '2');
+                        signIN.style.transition = 'all 0.5s ease';
+                        signIN.style.height = '490px';
+                        email.style.transition = 'all 0.5s ease';
+                        email.style.transform = 'translateX(-50%)';
+                        email.style.left = '50%';
+                        email.style.border = '1px solid black';
+                        email.style.top = '180px'
+                        password.style.transition = 'all 0.5s ease';
+                        password.style.opacity = '1';
+                        password.style.transform = 'translateX(-50%)';
+                        password.style.left = '50%';
+                        password.style.border = '1px solid black';
+                        password.style.top = '260px';
+                        password.style.height = '56px';
+                        password.style.border = '2px solid #7FE9FE';
+                        signIn_btn.style.transition = 'all 0.5s ease';
+                        signIn_btn.style.width = '95px';
+                        signIn_btn.style.right = '50%';
+                        signIn_btn.style.top = 'calc(100% - 88px)';
+                        signIn_btn.style.transform = 'translate(50%, -100%)';
+                        signup.style.transform = 'translateX(-50%)';
+                        signup.style.left = '50%';
+                    }
+                } else {
+                    
+                }
+            });
+        </script>
+</body>
+
+</html>
